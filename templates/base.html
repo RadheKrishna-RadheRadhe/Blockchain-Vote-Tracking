@@ -1,0 +1,49 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Voting</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/results">Results</a></li>
+                {% if session.get('role') == 'admin' %}
+                <li><a href="/admin/dashboard">Admin Dashboard</a></li>
+                {% endif %}
+                
+                {% if session.get('user') %}
+                <li><a href="/logout">Logout</a></li>
+                {% else %}
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class="flash-messages">
+            {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Shailendra Kumar C S RK</p>
+        </footer>
+    </div>
+</body>
+</html>

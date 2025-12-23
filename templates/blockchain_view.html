@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Blockchain</h1>
+
+<!-- Table to display blockchain -->
+<table class="blockchain-table">
+    <thead>
+        <tr>
+            <th>Voter</th>
+            <th>Candidate</th>
+            <th>Timestamp</th>
+            <th>Previous Hash</th>
+            <th>Hash</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for block in chain %}
+        <tr>
+            <td>{{ block.voter_hash }}</td>
+            <td>{{ block.candidate }}</td>
+            <td>{{ block.timestamp }}</td>
+            <td>{{ block.prev_hash }}</td>
+            <td>{{ block.block_hash }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

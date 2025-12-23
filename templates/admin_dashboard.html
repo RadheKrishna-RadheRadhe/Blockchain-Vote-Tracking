@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Admin Dashboard</h1>
+
+<p>Welcome to the admin dashboard. You can start/stop elections and view blockchain information here.</p>
+
+<div class="admin-buttons">
+    <button onclick="window.location.href='/admin/blockchain'">View Blockchain</button>
+    <button onclick="window.location.href='/admin/export'">Export Results</button>
+</div>
+
+{% endblock %}

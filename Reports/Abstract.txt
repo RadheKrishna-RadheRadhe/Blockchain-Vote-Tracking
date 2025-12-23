@@ -1,0 +1,7 @@
+This project suggests and deploys a Secure Blockchain-Based Voting System, a web application that uses blockchain concepts to increase the security, integrity, and transparency of the online voting process. It utilizes Python, Flask, and SQLite to construct the system, and adopts a simulated blockchain to store votes as cryptographically bound blocks.
+
+Every vote is committed as an unchangeable block containing a hash of the voter's identity (to provide anonymity), the candidate chosen, a timestamp, the hash of the prior block, and its own cryptographic hash. This makes any manipulation of previous records invalidate the chain's integrity, rendering the system tamper-proof.
+
+The platform allows for user authentication, such as optional two-factor authentication, to prevent unregistered voters from casting their votes. Admin users have the ability to control the election lifecycle—initiating and closing elections, seeing live results, and exporting the blockchain for auditing purposes.
+
+Visualization module enables users and auditors to see the hash chain of votes in clear and transparent form. The project illustrates how the concepts of blockchain can be put to practical use in developing a secure, transparent, and verifiable online voting system.

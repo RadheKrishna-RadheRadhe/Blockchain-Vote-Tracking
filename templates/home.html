@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Welcome to Blockchain Voting</h1>
+        <p>Join the future of secure and transparent voting.</p>
+        <div class="cta-buttons">
+            {% if not session.get('user') %}
+                <a href="/login"><button class="btn primary-btn">Login</button></a>
+                <a href="/register"><button class="btn secondary-btn">Register</button></a>
+            {% else %}
+                <p>You're already logged in!</p>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<!-- Info Section -->
+<section class="info-section">
+    <div class="info-container">
+        <div class="info-box">
+            <h2>Secure Voting</h2>
+            <p>Our blockchain-powered platform ensures that your vote is securely stored and cannot be tampered with.</p>
+        </div>
+        <div class="info-box">
+            <h2>Transparent System</h2>
+            <p>All votes are visible on the blockchain, ensuring full transparency and trust in the election process.</p>
+        </div>
+        <div class="info-box">
+            <h2>Simple Process</h2>
+            <p>Voting is easy, quick, and accessible to everyone. Just log in, cast your vote, and you're done!</p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

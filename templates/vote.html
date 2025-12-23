@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Cast Your Vote</h1>
+
+<form method="POST" action="/vote">
+    {% for candidate in candidates %}
+    <label>
+        <input type="radio" name="candidate" value="{{ candidate }}" required>
+        {{ candidate }}
+    </label><br>
+    {% endfor %}
+    <br>
+    <button type="submit">Submit Vote</button>
+</form>
+
+{% endblock %}
